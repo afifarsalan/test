@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Afif Portflio</title>
+<link rel="icon" href="icon.png">
+<link rel="stylesheet" href="project-1.CSS">
+</head>
+<body>
+    <div class="custom-cursor" id="cursor"></div>
+    <div class="disable" id="load">
+        <div class="loading">
+            <div class="back"></div>
+            <div class="kopi">
+                <div class="kopia"></div>
+                <div class="cup_kopi">
+                    <div class="brown-coffe"></div>
+                </div>
+                <div class="garis">
+                </div>
+            </div>
+            <div class="brown-wave"></div>
+            <div class="black-wave"></div>
+        </div>
+    </div>
+
+    <div class="header" id="header">
+        <div class="about-me" onclick="scrollToSection('about-me')"> HOME!</div>
+        <div class="my-projects" onclick="scrollToSection('my-projects')">My Projects</div>
+        <div class="other" onclick="scrollToSection('other')">Other</div>
+        <div class="mode_malam" id="mode_malam">
+            <img src="icon.png" style="max-width: 50px;">
+        </div>
+    </div>
+    <div class="container">
+    <div class="particle-grid">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <div class="cube">
+      <div class="face front">2<sup class="small-sup">555</sup> + dx</div>
+      <div class="face back">sin(x) cos(y) tan(z)</div>
+      <div class="face left">17x + c</div>
+      <div class="face right">2<sup>555</sup> + dx</div>
+      <div class="face top">P = V . I</div>
+      <div class="face bottom">P = 1<sup><sup>2</sup></sup> . R</div>
+    </div>
+    <div class="particle-grid">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    </div>
+    <div id="networkContainer">
+        <canvas id="networkCanvas"></canvas>
+        <div class="content">
+            <div class="section" id="about-me">
+                <div class="pj1">
+                    <div class="judul" style="background-color: black;">
+                        <h2>Mechanics</h2>
+                    <div class="tulisan">
+                            saya bla blalbalbalbalbalbalbalbla.
+                            balbalbalblalb
+                            aballbalbabalbal
+                            ballbalbalbablabl
+                            bblablabalbalblabla
+                            albabababababba;
+                            lbalbabba
+                            albababalbalblballbalba
+                        </div>
+                        <div>
+                            <img src="icon.png" alt="png" class="gambar" style="max-width: 120px; max-height: auto;">
+                        </div><br>
+                    <div class="judul">
+                        <div>
+                            <img src="icon.png" alt="png" class="gambar" style="max-width: 120px; max-height: auto;">
+                        </div>
+                        <div class="tulisan">
+                            saya bla blalbalbalbalbalbalbalbla.
+                            balbalbalblalb
+                            aballbalbabalbal
+                            ballbalbalbablabl
+                            bblablabalbalblabla
+                            albabababababba;
+                            lbalbabba
+                            albababalbalblballbalba
+                        </div>
+                        <img src="icon.png" class="slide">
+                        <div class="slide" >
+                            lortem ipsum ngakan ngakan
+                        </div>
+                    </div>
+                </div>
+                    
+                    <h1>About Me!</h1>
+                    <div>
+                        <div>
+                            
+                        </div>
+                    </div>
+                    <div>
+                        <p>Saya sering dipanggil Afif dan berasal dari kota Jember, Jawa Timur, Indonesia.</p>
+                    </div>
+                <div>
+                    <p>Saya sedang menempuh Pendidikan Mekatronika di SMK Negeri 02 Jember dan aktif berorganisasi dan berkompetisi disana.</p>
+                </div>
+                <div>
+                    <p>Saya harap kita dapat menjalin hubungan yang baik dan dapat bekerja sama dengan lancar <span class="smile">😊</span></p>
+                </div>
+                <div>
+                    <p>
+                        Halo loha
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="section" id="my-projects">
+            <p>My Projects section. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+        <div class="section" id="other">
+            <p>Other section. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+    </div>
+        
+
+    <script>
+        window.addEventListener('scroll', function() {
+            var header = document.getElementById('header');
+            var scrollTop = window.scrollY;
+            if (scrollTop >= 20) {
+                header.classList.add('header-blur');
+            } else {
+                header.classList.remove('header-blur');
+            }
+        });
+
+        function scrollToSection(sectionId) {
+            var section = document.getElementById(sectionId);
+            var sectionTop = section.offsetTop;
+            var distance = Math.abs(sectionTop - window.scrollY);
+            var speed = distance * 0.1;
+            var interval = 50;
+            var increment = (sectionTop > window.scrollY) ? 100 : -100;
+
+            function smoothScroll() {
+                if ((increment > 0 && window.scrollY >= sectionTop) || (increment < 0 && window.scrollY <= sectionTop)) {
+                    clearInterval(scrollInterval);
+                } else {
+                    window.scrollBy(0, increment);
+                }
+            }
+
+            var scrollInterval = setInterval(smoothScroll, interval);
+        }
+
+    </script>
+    
+    <script src="project-1.JS"></script>
+</body>
+</html>
+ 

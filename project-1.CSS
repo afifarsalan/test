@@ -1,0 +1,598 @@
+html {
+    background-color: rgb(130, 148, 156);
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  cursor: none;
+}
+.custom-cursor {
+  position: fixed;
+  width: 2px;
+  height: 2px;
+  border: 2px solid #fff;
+  border-radius: 100%;
+  pointer-events: visibleFill;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+  transition: all 0.2s ease;
+  
+}
+
+.custom-cursor:hover {
+    border: 4px solid white;
+    width: 4px;
+    height: 4px;
+    transition: scale 0.3s ease;
+}
+
+.custom-cursor.fade {
+  width: 50px;
+  height: 50px;
+  border: none;
+  /* Pastikan path file gif benar dan sesuai dengan struktur folder */
+  background: url('./c.gif') center center / cover no-repeat;
+  /* atau gunakan path absolut */
+  /* background: url('/path/to/your/c.gif') center center / cover no-repeat; */
+  animation: cursorr 0.5s ease;
+}
+
+@keyframes cursorr {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.disable {
+    animation: disable 1s forwards;
+    animation-delay: 6s;
+}
+
+.loading {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    animation: blur 3s forwards;
+    animation-delay: 4s;
+    overflow: hidden;
+}
+.back {
+    position: absolute; 
+    width: 100%;
+    height: 100%;
+    background-color: orange;
+    animation: stayvisible 3s forwards 3s,
+    fadeout 1s forwards 3s;
+    z-index: 92;
+}
+.cup_kopi {
+    height: 75px;
+    width: 70px;
+    position: relative;
+    border-top: 2px none black;
+    border-left: 2px solid black;
+    border-bottom: 2px solid black;
+    border-right: 2px solid black;
+    border-radius: 0.5em;
+    box-shadow: 0px 20px 40px black;
+    z-index: 1001;
+    overflow: hidden;
+    display: flex;
+}
+.brown-coffe {
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    left: 30%;
+    bottom: -150%;
+    border-radius: 33%;
+    background: linear-gradient(45deg, blue, red);
+    z-index: 101;
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    animation: waves 3.5s forwards;
+}
+.brown-coffe:before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 10%;
+    bottom: -150%;
+    border-radius: 33%;
+    background: linear-gradient(45deg, blue, red);
+    z-index: 10;
+    rotate: 65deg;
+    scale: 1;
+    animation: scale-up 4s forwards infinite ;
+
+}
+.brown-coffe:after {
+    
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 20%;
+    bottom: -150%;
+    border-radius: 33%;
+    background: linear-gradient(45deg, blue, red);
+    z-index: 10;
+    rotate: 235deg;
+    scale: 3;
+    animation: scale-loop 4s forwards infinite ;
+
+}
+.kopia {
+    height: 40px;
+    width: 35px;
+    left: 65px;
+    top: 60px;
+    position: relative;
+    rotate: -35deg;
+    overflow: hidden;
+    border-bottom: 3px solid black;
+    border-right: 3px solid black;
+    border-radius: 100%;
+    display: flex;
+    z-index: 1001;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+.garis {
+    position: relative;
+    width: 70px; /* Lebar kotak */
+    height: 95px; /* Tinggi kotak */
+    overflow: hidden; /* Agar garis yang keluar tidak terlihat */
+}
+.brown-waterfall {
+    position: absolute;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #8B4513;
+    animation: waterfall 1s forwards,
+               stayvisible 2s forwards 1s,
+               fadeout 1s forwards 3s;
+    z-index: 99;
+}
+.brown-wave {
+    position: absolute;
+    bottom: -100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #8B9513;
+    animation: wave 2s forwards,
+               stayvisible 2s forwards 1s,
+               fadeout 2s forwards ;
+    animation-delay: 1s,3s,3s;
+    z-index: 98;
+}
+.black-wave {
+    position: absolute;
+    bottom: -100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #777777;
+    animation: wave 1s forwards, fadeout 2s forwards;
+    animation-delay: 2s, 3s;
+    z-index: 98;
+}
+
+@keyframes disable {
+    0%{
+        display: flex;
+    }
+
+    99%{
+        display: flex;
+    }
+    100%{
+        display: none;
+    }    
+}
+
+@keyframes blur {
+    0% {
+        opacity: 0.3;
+        background: rgba(255, 255, 255, 0.5); /* Warna latar belakang semi-transparan */
+        backdrop-filter: blur(10px)
+    }
+    33% {
+        opacity: 0.3;
+        background: rgba(255, 255, 255, 0.5); /* Warna latar belakang semi-transparan */
+        backdrop-filter: blur(10px)
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes waves{
+    0%
+        {
+            rotate: 0deg;
+            scale: 1;
+        }    
+    100%
+        {
+            rotate: 1080deg;
+            scale: 3.5;
+        }
+      
+}
+@keyframes waterfall {
+    from {
+        top: -100%;
+    }
+    to {
+        top: 0;
+    }
+}
+@keyframes wave {
+    from {
+        bottom: -100%;
+    }
+    to {
+        bottom: 0;
+    }
+}
+@keyframes fadeout {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+@keyframes stayvisible {
+    from, to {
+        opacity: 1;
+        top: 0;
+    }
+}
+@keyframes scale-up {
+    0% {
+        transform: scale(1);
+        rotate: 0deg;
+    }
+    100% {
+        transform: scale(3);
+        rotate: 1080deg;
+    }
+}
+@keyframes scale-loop {
+    0% {
+        transform: scale(3);
+        rotate: 0deg;
+    }
+    50% {
+        transform: scale(2.5);
+        
+        rotate: 720deg;
+    }
+    100% {
+        transform: scale(3);
+        
+        rotate: 1080deg;
+    }
+}
+
+
+
+
+.header {
+    width: 100%;
+    height: 50px;
+    background-color: #000000;
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px 0 20px;
+    transition: filter 0.5s ease;
+    backdrop-filter: blur(5px); /* Tambahkan ini */
+}
+
+.content {
+    margin-top: 50px;
+    padding: 20px;
+    height: calc(100% - 50px);
+    overflow-y: scroll;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.section {
+    width: 100%;
+    height: 1000px; /* Contoh tinggi konten */
+    background-color: rgb(192, 225, 255);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    text-align: center;
+    opacity: 0.99999999;
+    color: rgb(0, 140, 255);
+}
+ .my-projects, .other {
+    background-color: #a0a0a0;
+    cursor: pointer;
+    width: 100%;
+    text-align: center;
+    padding: 1px;
+    font-size: 14px;
+    font-style: italic;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.about-me {
+    background-color: #a0a0a0;
+    cursor: pointer;
+    width: 100%;
+    text-align: center;
+    padding: 1px;
+    font-size: 14px;
+    font-style: italic;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+}
+
+
+.about-me:hover, .my-projects:hover, .other:hover {
+    background-color: rgb(128, 128, 128);
+    color: white;
+    border-radius: 35px;
+    transition: 0.5s;
+    font-size: 16px;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    z-index: 100;
+    background-image: url(icon.png);
+    background-size: cover; /* Mengisi seluruh area elemen */
+    background-position: center; /* Memusatkan gambar */
+    background-repeat: no-repeat; /* Menghindari pengulangan gambar */
+    width: 100%; /* Lebar penuh */
+    height: auto; /* Tinggi otomatis */
+    min-height: 100vh; /* Minimal tinggi 100% dari viewport */
+    background-color: black;
+                                    
+}
+
+
+.small-sup {
+    font-size: 0.6em; /* Ukuran font lebih kecil */
+    vertical-align: super; /* Memposisikan lebih tinggi */
+    line-height: 0; /* Mengurangi jarak vertikal */
+}
+.face {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background: linear-gradient(135deg, #ff66cc, #6600ff);
+  border: 2px solid #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  color: white;
+}
+.front  { transform: rotateY(0deg) translateZ(50px); }
+.back   { transform: rotateY(180deg) translateZ(50px); }
+.left   { transform: rotateY(-90deg) translateZ(50px); }
+.right  { transform: rotateY(90deg) translateZ(50px); }
+.top    { transform: rotateX(90deg) translateZ(50px); }
+.bottom { transform: rotateX(-90deg) translateZ(50px); }
+@keyframes rotateCube {
+  0% { transform: rotateX(0deg) rotateY(0deg); }
+  100% { transform: rotateX(360deg) rotateY(360deg); }
+}
+.particle-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 20px);
+    grid-template-rows: repeat(1, 20px);
+    gap: 10px;
+    z-index: 98;
+    transform: scale(1); /* Skala default */
+    transition: transform 0.3s ease; /* Transisi halus saat skala berubah */
+}
+
+.cube {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    transform-style: preserve-3d;
+    animation: rotateCube 5s infinite linear;
+    cursor: pointer;
+    z-index: 99;
+    transform: scale(1); /* Skala default */
+    transition: transform 0.3s ease; /* Transisi halus saat skala berubah */
+}
+
+/* Media query untuk layar kurang dari ukuran iPad */
+@media (max-width: 768px) {
+    .particle-grid {
+        transform: scale(0.5); /* Skala menjadi 0.5 */
+    }
+    cube {
+        display:none;
+    }
+    
+}
+.particle-grid div {
+  width: 20px;
+  height: 20px;
+  background: linear-gradient(135deg, #ff0099, #6600ff);
+  border-radius: 50%;
+  animation: float 3s infinite ease-in-out;
+}
+.particle-grid div:nth-child(odd) {
+  animation-delay: 0.5s;
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.sidebar {
+    position: fixed;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    -index: 99; /* Mengatur z-index agar sidebar muncul di atas konten */}
+
+#networkContainer {
+    position: relative;
+    background-color: rgb(210, 235, 255);
+    width: auto;
+    height: auto;
+    z-index: 1;
+    padding: 0;
+}
+
+#networkCanvas {
+    position: absolute; /* Mengatur canvas menjadi absolute */
+    top: 0; /* Menempatkan canvas di atas */
+    left: 0; /* Menempatkan canvas di atas */
+    width: 100%; /* Mengatur lebar canvas */
+    height: 100%; /* Mengatur tinggi canvas */
+    z-index: 0; /* Menempatkan canvas di belakang konten */
+}
+
+[style*="cursor: pointer"], 
+a, 
+button, 
+.about-me, 
+.my-projects, 
+.other,
+.cube,
+*[onclick] {
+    cursor: none !important;
+}
+
+.other {
+    background-color: #a0a0a0;
+    cursor: pointer;
+    width: auto;
+    height: auto;
+    text-align: center;
+    padding: 1px 20px;
+    font-size: 14px;
+    font-style: italic;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    border-radius: 0 50px 50px 0; /* Membuat setengah lingkaran di sebelah kanan */
+}
+
+.other:hover {
+    background-color: rgb(128, 128, 128);
+    color: white;
+    border-radius: 35px 35px 35px 35px; /* Menyesuaikan hover juga jadi setengah lingkaran */
+    transition: 0.5s;
+    font-size: 16px;
+}
+.about-me {
+    background-color: #a0a0a0;
+    cursor: pointer;
+    width: auto;
+    height: auto;
+    text-align: center;
+    padding: 1px 20px;
+    font-size: 14px;
+    font-style: italic;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    border-radius: 50px 0 0 50px; /* Membuat setengah lingkaran di sebelah kanan */
+}
+
+.about-me:hover {
+    background-color: rgb(128, 128, 128);
+    color: white;
+    border-radius: 35px 35px 35px 35px; /* Menyesuaikan hover juga jadi setengah lingkaran */
+    transition: 0.5s;
+    font-size: 16px;
+}
+.my-projects:hover {
+    background-color: rgb(128, 128, 128);
+    color: white;
+    border-radius: 35px 35px 35px 35px; /* Menyesuaikan hover juga jadi setengah lingkaran */
+    transition: 0.5s;
+    font-size: 16px;
+}
+.judul {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.tulisan {
+    flex: 1;
+}
+
+.image {
+    flex: 1;
+}
+
+/* Animasi mengetik */
+#ketik {
+    overflow: hidden;
+    border-right: 2px solid;
+    white-space: nowrap;
+    margin: 0;
+    animation: typing 3.5s steps(40, end),
+               blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: black }
+}
+.pj1 {
+    align-items: normal;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0    ;
+}
+.slide {
+    width: auto;
+    height: auto;
+    padding: 10% 10% 10% 10%;   
+    border-style: solid;
+    overflow: hidden;
+    background-color: aqua;
+    animation: sliider 3s forwards;
+}
+
+@keyframes slider {
+    0% {
+        cursor: pointer;
+        scale: 1;
+    }
+    100% {
+        padding: 0px 0px 0px 0px;
+        scale: 1.5;
+    }
+}
